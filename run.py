@@ -131,5 +131,20 @@ def main():
                         print(f"You have logged out your {account_name} account")
                         print('\n')
                         break
+        else:
+                print('\n')
+                print("WRONG PASSWORD!! PLEASE ENTER CORRECT PASSWORD TO LOGIN")
+                print('\n')
+                print('\n')
+                    
+        elif short_code == "ex":
+                    print(f"Thanks {user_name} for your time.I hope you enjoyed my service.Bye...")
+                    break
+        else:
+                    print("I really didn't get that. Please use the short codes")
+
+if __name__ == '__main__':
+    main()                            
+
                                                    
                         
