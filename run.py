@@ -93,4 +93,26 @@ def main():
                 print("\033[1;32;1m   \n")
                 print(f"You are now logged in to your {account_name} account")
                 print("\033[1;37;1m   \n")
+
+
+         while True:
+                    print('''
+                    Use these short codes:
+                    cn -> Create new credential.
+                    sh -> show your credential list
+                    ex ->Log out your credential account.''')
+                    short_code = input().lower()
+                    if short_code == "cn":
+                        print("Create new credential")
+                        print('_' * 20)
+                        credential_name = input('Credential name:')
+                        print('\n')
+                        usr_name = input(f"{credential_name} user name:")
+                        print('\n')
+                        print('*' * 20)
+                        pwd = input(f"{credential_name} password:")
+                        save_credential(create_credential(credential_name,usr_name,pwd,e_address))
+                        print('\n')
+                        print(f"A New {credential_name} Account with the user name  {usr_name} has been created.")
+                        print ('\n')        
                         
