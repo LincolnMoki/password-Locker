@@ -95,7 +95,7 @@ def main():
                 print("\033[1;37;1m   \n")
 
 
-         while True:
+    while True:
                     print('''
                     Use these short codes:
                     cn -> Create new credential.
@@ -114,5 +114,22 @@ def main():
                         save_credential(create_credential(credential_name,usr_name,pwd,e_address))
                         print('\n')
                         print(f"A New {credential_name} Account with the user name  {usr_name} has been created.")
-                        print ('\n')        
+                        print ('\n') 
+      elif short_code == 'sh':
+                         if display_credential():
+                             print("Here is your credential")
+                             print('\n')
+                             for credential in display_credential():
+                                 print(f"Credential name:{credential.credential_name}  User name: {credential.usr_name} Password:{credential.password}")
+                                 print('\n')
+                         else:
+                              print('\n')
+                              print("You don't seem to have created any account yet")
+                              print('\n')
+                    elif short_code == "ex":
+                        print('\n')
+                        print(f"You have logged out your {account_name} account")
+                        print('\n')
+                        break
+                                                   
                         
