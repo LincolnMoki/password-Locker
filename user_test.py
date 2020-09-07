@@ -7,7 +7,7 @@ class TestUser(unittest.TestCase):
      def setUp(self):
          
          
-          self.new_user = User("Alpha","Rome","rome231")
+        self.new_user = User("Alpha","Rome","rome231")
           
           
           
@@ -28,7 +28,8 @@ class TestUser(unittest.TestCase):
         test_user = User("Facebook","Alpha","Rome","rome231") 
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
-      def tearDown(self):
+
+     def tearDown(self):
          
          User.user_list = []
 
