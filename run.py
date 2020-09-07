@@ -74,3 +74,23 @@ def main():
             print(f"A New {account_name} Account with the user name  {u_name} has been created.")
             print(f"You can now login to your {account_name} account using your password.")
             print ('\n')
+    elif short_code == 'vw':
+             if display_user():
+                 print("Here is your account and your details")
+                 print('\n')
+                 for user in display_user():
+                     print(f"Account name:{user.user_name}  User name: {user.user_name} Password:{user.password}")
+                     print('\n')
+             else:
+                 print('\n')
+                 print("You dont seem to have created an account.Sign up to create a new account.")
+                 print('\n')
+        elif short_code == 'lg':
+            print("Enter your password to login.")
+            search_user = input()
+            if check_existing_user(search_user):
+                search_credential = find_user(search_user)
+                print("\033[1;32;1m   \n")
+                print(f"You are now logged in to your {account_name} account")
+                print("\033[1;37;1m   \n")
+                        
