@@ -49,6 +49,31 @@ class TestUser(unittest.TestCase):
 
          found_user = User.find_by_user_name("Rome")
 
-         self.assertEqual(found_user.user_name,test_user.user_name)   
+         self.assertEqual(found_user.user_name,test_user.user_name) 
+     def test_user_exists(self):
+         
+
+         self.new_user.save_user()
+         test_user = User("Facebook","Alpha","Rome","rome231") 
+         test_user.save_user()
+
+         user_exists = User.user_exist("Rome")
+
+         self.assertTrue(user_exists)
+     def test_display_all_users(self):
+       
+
+         self.assertEqual(User.display_user(),User.user_list)
+   
+     def test_copy_password(self):
+         
+
+         self.new_user.save_user()
+         User.copy_password("")
+
+         self.assertEqual(self.new_user.password,pyperclip.paste())
+
+if __name__ ==  '__main__':
+ unittest.main()      
     
                
